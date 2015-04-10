@@ -12,7 +12,14 @@ x <- "./household_power_consumption.txt"
 
 ##It is a very large data file. But we can read it fast with the fread function
 ##in the data.table package.
-library("data.table")
+
+##This part of the code checks if the package is already installed and if not 
+##it installs it.
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load("data.table")
+library("data.table") ##loading the package
+##Reading the data
+
 data <- fread(x, na.strings="?")
 ##We have read the file and have assigned the ? as NA.
 
