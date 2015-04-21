@@ -48,3 +48,7 @@ legend("topright", c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"),
        lwd=c(2.5,2.5),col=c("black", "red", "blue")) 
 
 dev.off()
+##IMPORTANT NOTE:
+##making the datetime an asPOSIXct object tells R to plot the x axis as "Thu"
+##"Fri" and "Sat" by default, therefore removing the need to use parameters "at"
+##and "labels" in the "axis" subfunction."

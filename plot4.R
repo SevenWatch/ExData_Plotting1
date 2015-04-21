@@ -41,6 +41,7 @@ data$DateTimeProper <- as.POSIXct(data$DateTime, format ="%d/%m/%Y %H:%M:%S")
 ##This code creates and saves the graph as a png file in our working directory.
 png("plot4.png", width=480, height=480)
 par(mfrow= c(2, 2), mar = c(4, 4, 2, 1), oma= c(0, 0, 0, 0))
+
 ##plot1
 plot(data$DateTimeProper, as.numeric(data$Global_active_power), type= "l", xlab = "",
      ylab = "Global Active Power")
@@ -58,3 +59,8 @@ legend("topright", c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"),
 plot(data$DateTimeProper, as.numeric(data$Global_reactive_power), type= "l", xlab = "datetime",
      ylab = "Global_reactive_power",ylim=c(0.0, 0.5))
 dev.off()
+
+##IMPORTANT NOTE:
+##making the datetime an asPOSIXct object tells R to plot the x axis as "Thu"
+##"Fri" and "Sat" by default, therefore removing the need to use parameters "at"
+##and "labels" in the "axis" subfunction."

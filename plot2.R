@@ -42,3 +42,8 @@ data$DateTimeProper <- as.POSIXct(data$DateTime, format ="%d/%m/%Y %H:%M:%S")
 png("plot2.png", width=480, height=480)
 with(data, plot(DateTimeProper, Global_active_power, type = "l", xlab = "", ylab ="Global Active Power (kilowatts)"))
 dev.off()
+
+##IMPORTANT NOTE:
+##making the datetime an asPOSIXct object tells R to plot the x axis as "Thu"
+##"Fri" and "Sat" by default, therefore removing the need to use parameters "at"
+##and "labels" in the "axis" subfunction."
